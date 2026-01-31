@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paragon League Relic Route Planner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <div>
+      <h1>Paragon League Relic Route Planner</h1>
+      <div class="sub">Plan your relic route and track all benefits</div>
+    </div>
+    <div class="header-actions">
+      <input id="planName" type="text" placeholder="Plan name..." class="plan-name-input" />
+      <div class="header-buttons">
+        <button class="btn primary" id="btnExport">Export</button>
+        <button class="btn" id="btnImport">Import</button>
+        <button class="btn danger" id="btnReset">Reset</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="main-container">
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="kpi" id="kpis"></div>
+    <div class="save-indicator">
+      <span class="pill" id="saveState">Saved</span>
+    </div>
+  </div>
+
+  <!-- Main Layout: Tiers on Left, Details on Right -->
+  <div class="main-layout">
+    <!-- Left: Tier Selection Grid -->
+    <div class="tiers-section">
+      <h2 class="section-title">Select Your Relics</h2>
+      <div class="tiers-grid" id="tiers"></div>
+    </div>
+
+    <!-- Right: All Details -->
+    <div class="details-panel">
+      <div class="detail-card">
+        <div class="detail-header">
+          <h3>Selected Relic Details</h3>
+          <span class="pill accent" id="activeTierPill">Tier: —</span>
+        </div>
+        <div id="detail" class="detail-content"></div>
+      </div>
+
+      <div class="compare-card">
+        <h3>Compare Options</h3>
+        <div id="compare" class="compare-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Combined Bonuses Summary -->
+  <div class="summary-section">
+    <div class="summary-header">
+      <h2 class="section-title">Combined Tier Bonuses</h2>
+      <div class="current-tier-selector">
+        <label for="currentTier">Current Tier:</label>
+        <select id="currentTier">
+          <option value="1">Tier 1</option>
+          <option value="2">Tier 2</option>
+          <option value="3">Tier 3</option>
+          <option value="4">Tier 4</option>
+          <option value="5">Tier 5</option>
+          <option value="6">Tier 6</option>
+          <option value="7">Tier 7</option>
+          <option value="8" selected>Tier 8</option>
+        </select>
+      </div>
+    </div>
+    <div class="summary-card" id="bonusSummary"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
